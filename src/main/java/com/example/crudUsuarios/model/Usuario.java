@@ -4,13 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.NonNull;
+
 @Entity
-public class User {
+public class Usuario {
     private Long id;
+    @NonNull
     private String name;
     private String email;
+
+    public Usuario() {
+    }
     
-    public User(Long id, String name, String email) {
+    public Usuario(Long id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
