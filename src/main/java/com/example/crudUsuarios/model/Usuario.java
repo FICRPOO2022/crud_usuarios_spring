@@ -10,15 +10,17 @@ import lombok.NonNull;
 public class Usuario {
     private Long id;
     @NonNull
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
 
     public Usuario() {
     }
     
-    public Usuario(Long id, String name, String email) {
+    public Usuario(Long id, String firstName, String lastName, String email) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
     }
 
@@ -32,12 +34,20 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -47,5 +57,11 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String fullName() {
+        return this.firstName + " " + this.lastName;
+    }
+
+
     
 }
